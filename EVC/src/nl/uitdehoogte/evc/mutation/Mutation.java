@@ -1,8 +1,10 @@
 package nl.uitdehoogte.evc.mutation;
 
+import nl.uitdehoogte.evc.representation.Representation;
+
 public interface Mutation 
 {
-	public void mutate();
+	public <T> void mutate(Representation<T> representation);
 	
 	
 }
