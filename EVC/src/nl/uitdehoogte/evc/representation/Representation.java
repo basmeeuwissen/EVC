@@ -48,52 +48,52 @@ public abstract class Representation<T>
 	}
 	
 	//Mutation methods
-	public void BitwiseMutation(double probability) throws UnsupportedOperationException
+	public void bitwiseMutation(double probability) throws UnsupportedOperationException
 	{
 		throw new UnsupportedOperationException("Operation not supported!");
 	}
 	
-	public void RandomResetting(double probability) throws UnsupportedOperationException
+	public void randomResetting(double probability) throws UnsupportedOperationException
 	{
 		throw new UnsupportedOperationException("Operation not supported!");
 	}
 	
-	public void CreepMutation(double probability) throws UnsupportedOperationException
+	public void creepMutation(double probability) throws UnsupportedOperationException
 	{
 		throw new UnsupportedOperationException("Operation not supported!");
 	}
 	
-	public void UniformMutation(double probability, double lowerBound, double upperBound) throws UnsupportedOperationException
+	public void uniformMutation(double probability, double lowerBound, double upperBound) throws UnsupportedOperationException
 	{
 		throw new UnsupportedOperationException("Operation not supported!");
 	}
 	
-	public void NonuniformMutation(double stdDev) throws UnsupportedOperationException
+	public void nonuniformMutation(double stdDev) throws UnsupportedOperationException
 	{
-		NonuniformMutation(stdDev, "Gaussian");
+		nonuniformMutation(stdDev, "Gaussian");
 	}
 	
-	public void NonuniformMutation(double stdDev, String distribution) throws UnsupportedOperationException
-	{
-		throw new UnsupportedOperationException("Operation not supported!");
-	}
-	
-	public void SwapMutation() throws UnsupportedOperationException
+	public void nonuniformMutation(double stdDev, String distribution) throws UnsupportedOperationException
 	{
 		throw new UnsupportedOperationException("Operation not supported!");
 	}
 	
-	public void InsertMutation() throws UnsupportedOperationException
+	public void swapMutation() throws UnsupportedOperationException
 	{
 		throw new UnsupportedOperationException("Operation not supported!");
 	}
 	
-	public void ScramblepMutation() throws UnsupportedOperationException
+	public void insertMutation() throws UnsupportedOperationException
 	{
 		throw new UnsupportedOperationException("Operation not supported!");
 	}
 	
-	public void InversionpMutation() throws UnsupportedOperationException
+	public void scrambleMutation() throws UnsupportedOperationException
+	{
+		throw new UnsupportedOperationException("Operation not supported!");
+	}
+	
+	public void inversionMutation() throws UnsupportedOperationException
 	{
 		throw new UnsupportedOperationException("Operation not supported!");
 	}

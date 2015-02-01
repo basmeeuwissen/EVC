@@ -1,42 +1,95 @@
 package nl.uitdehoogte.evc.representation;
 
+import java.util.List;
+
 public class PermutationRepresentation extends Representation<Character>
 {
-	private int nextIndex(int currentIndex)
+	public void swapMutation()
+	{
+		int firstIndex = nextIndex(data, -1),
+				secondIndex = nextIndex(data, firstIndex);
+		
+		swap(data, firstIndex, secondIndex);
+	}
+	
+	public void insertMutation()
+	{
+		int firstIndex = nextIndex(data, -1),
+		    secondIndex = nextIndex(data, firstIndex);
+		
+		if(firstIndex > secondIndex)
+		{
+			int tempIndex = firstIndex;
+			firstIndex = secondIndex;
+			secondIndex = tempIndex;
+		}
+		
+		data.add(firstIndex + 1, data.get(secondIndex));
+		data.remove(secondIndex + 1);
+	}
+	
+	public void scrambleMutation()
+	{
+		int firstIndex = nextIndex(data, -1),
+			secondIndex = nextIndex(data, firstIndex);
+		
+		if(firstIndex > secondIndex)
+		{
+			int tempIndex = firstIndex;
+			firstIndex = secondIndex;
+			secondIndex = tempIndex;
+		}
+		
+		List<Character> tempData = data.subList(firstIndex, secondIndex + 1);
+		
+		for(int i = 0; i < tempData.size(); i++)
+		{
+			swap(tempData, i, nextIndex(tempData, i));
+		}
+	}
+	
+	public void inversionMutation()
+	{
+		int firstIndex = nextIndex(data, -1),
+				secondIndex = nextIndex(data, firstIndex);
+			
+		if(firstIndex > secondIndex)
+		{
+			int tempIndex = firstIndex;
+			firstIndex = secondIndex;
+			secondIndex = tempIndex;
+		}
+			
+		List<Character> tempData = data.subList(firstIndex, secondIndex + 1);
+		
+		for(int i = 0; i < tempData.size() / 2; i++)
+		{
+			swap(tempData, i, tempData.size() - i - 1);
+		}
+	}
+	
+	private int nextIndex(List <Character> list, int currentIndex)
 	{
 		int nextIndex; 
 		
+		if(list.size() == 1)
+		{
+			return currentIndex;
+		}
+		
 		do
 		{
-			nextIndex = random.nextInt(data.size());
+			nextIndex = random.nextInt(list.size());
 		}
 		while(nextIndex == currentIndex);
 		
 		return nextIndex;
 	}
 	
-	public void SwapMutation()
+	private void swap(List<Character> list, int firstIndex, int secondIndex)
 	{
-		int firstIndex = nextIndex(-1),
-				secondIndex = nextIndex(firstIndex);
-		
-		char temp = data.get(firstIndex);
-		data.set(firstIndex, data.get(secondIndex));
-		data.set(secondIndex, temp);
-	}
-	
-	public void InsertMutation()
-	{
-		
-	}
-	
-	public void ScramblepMutation()
-	{
-		
-	}
-	
-	public void InversionpMutation()
-	{
-		
+		char temp = list.get(firstIndex);
+		list.set(firstIndex, list.get(secondIndex));
+		list.set(secondIndex, temp);		
 	}
 }
