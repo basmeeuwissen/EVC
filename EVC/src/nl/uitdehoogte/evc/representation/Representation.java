@@ -68,12 +68,7 @@ public abstract class Representation<T>
 		throw new UnsupportedOperationException("Operation not supported!");
 	}
 	
-	public void nonuniformMutation(double stdDev) throws UnsupportedOperationException
-	{
-		nonuniformMutation(stdDev, "Gaussian");
-	}
-	
-	public void nonuniformMutation(double stdDev, String distribution) throws UnsupportedOperationException
+	public void nonuniformMutation(double stdDev, double probability, double lowerBound, double upperBound) throws UnsupportedOperationException
 	{
 		throw new UnsupportedOperationException("Operation not supported!");
 	}
